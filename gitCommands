@@ -1,0 +1,57 @@
+====================================================================================== Git Commands ===============================================================================================
+-git init
+initialize empty git repository
+-git clone  "url u clone from"
+pull the changes in the repo or pull entier repo
+-git add 
+either the filename or end the command with . to add every thing new 
+-git commit -m 'the commit message'
+take the commited changes and save them to the project
+-git log 
+browse the commit log under the branch
+-git remote add origin  https://github.com/webzerone-code/MyRepository.git
+add remote git
+-git config --global user.email "you@example.com"
+-git config --global user.name "Your Name"
+-git push --set-upstream origin master
+set the git branch to master
+-git status
+to view status u made in u working directory
+-git merge "branch_name"
+allows to merge the feature branch to the main branch or any other branch
+-git checkout "branch_name"
+to either to switch branch or create new branch
+-git branch "branch_name"
+-git revert
+creates a new commit that undoes a previous commit
+-git rebase "→ Replay commits on top of another branch (great for clean history)."
+-git cherry-pick <commit> "→ Apply a single commit from another branch."
+.gitignore → Tell Git which files/folders to skip.
+
+-git stash "→ Save changes temporarily without committing."
+
+-- To Marge 2 Branchs 
+1- switch to branch u want to marge to 
+- git checkout 'branch_name u want to marge to'
+- git merge 'branch_name which u want to marge from to current branch'
+- git push -u origin master 
+this will push the merge to the main branch
+forking is modifies or extends a project without effecting the orginal project
+-git fetch 
+to transfer any changes from remote repo to u local repo it doesnt made the merge u have to do it manually
+-git pull
+pull the last update on remote to u local machien (git pull = git fetch + git merge)
+
+origin refers to your fork
+upstream refers to the original work
+
+-- Forking
+to configure git to sync the fork
+-git remote -v
+-git remove add ipstream "clone directory"
+
+-git fetch upstream 
+to grab upstream branches
+-git merge upstream/master
+to marge changes into the master branch
+-git request-pull

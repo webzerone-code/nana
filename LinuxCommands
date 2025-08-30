@@ -1,0 +1,222 @@
+-------------------------------------------------------------------------------------- Linux Commands ----------------------------------------------------------------------------------------------
+
+-pwd
+Print Working Directory display the full path of working Directory
+
+-ls
+List folders and files in the current path or directory
+-ls [directory path]
+list all the folders and files in this path without changing the current directory
+-ls -R [directory]
+display all the folders and files and the folder contents
+-ls -a
+show all files and folders include hidden
+
+-cd [dir name]
+Change directory
+-- cd ..
+go up directory
+
+-mkdir [directory name]
+make directory
+
+-touch [filename]
+create new file 
+
+-rm [filename]
+remove file 
+-rm -r [dirname]
+delete directory and all the file with in
+
+-clear 
+clear the terminal
+
+-mv [filename] [new_filename]
+Rename the file or direcotry 
+
+-cp -r [dirname] [new_dirname]
+copy file or folder from path to other path -r used with direcotries
+-cp [filename] [new_filename]
+
+
+-history
+give a list of all past commands typed in the current terminal session
+
+-history 2
+display the last 2 commands 
+
+
+-CTRL + r 
+search History
+
+
+
+-CTRL + c
+stop current command 
+
+
+-cat [filename]
+display the file content
+
+
+-uname -a
+show system and kernel
+
+-lscpu
+display cpu info
+-lsmem
+-display memory info
+
+-sudo
+excute command as superuser
+
+-adduser [username]
+add new user
+
+-su [-username]
+switch users
+
+------------------------------------------------------------------------------------------- Vim Commands -------------------------------------------------------------------------------------------
+-vim 
+open vim or vi text editor in command mode 
+-i 
+to switch to insert mode
+-esc 
+to switch to command mode
+-dd 
+delete entire line 
+-u
+undo action
+-/pattern 
+search file in command mode 
+-:%s/old/new 
+search and replace old with new in command mode 
+-:wq
+save and exit in command mode 
+-:q!
+quite and discard changes in command mode 
+-:q
+quite in command mode
+--------------------------------------------------------------------------------- Permissions&Owners -----------------------------------------------------------------------------------------------
+
+--- every file and directory has 3 groups Owner(u),Group(g),Others(o) each group has 3 Permissions (Read,Write,Excute)
+--- Linux has 3 types of Users (Super Users,Account Users,Services Users mysql,apache ... etc)
+-ls -l
+print files and folders with its permissions
+
+-chown <username>:<groupname> <filename>
+change ownership of the file
+
+-chown <username> <filename>
+change only the user for file
+
+-chgrp <groupname> <filename>
+change only the group for the file
+
+-chmod -x <file Or direcotry>
+remove excution mode from this directory
+
+-chmod g-w <fileOrfolder>
+remove write permission fro the group
+-chmod g+x <fileOrfolder>
+add permission execute for the group
+
+-chmod u+x <fileOrfolder>
+give permission to user for execute 
+
+-chmod o+x <fileOrfolder>
+give excute permmission for other users and group to excute 
+
+-chmod +x <fileOrfolder>
+-chmod a+x <fileOrfolder>
+give excute permission for all (a flag stand for all)
+
+-chmod g=rwx <fileOrfolder>
+assign the read,write,excute in one line for the group
+-chmod g=r-- <fileOrfilder>
+set all the 3 permissions 
+
+-chmod 777 <filename>
+give permission for every one on system for file or folder
+
+----------------------------------------------------------------------------- Manage Users&Groups -------------------------------------------------------------------------------------------------
+--- all users storted in /etc/passwd evey one can read it but only root can change it 
+
+-cat /etc/passwd
+--- the output return USERNAME:PASSWORD:UID:GID:GECOS:HOMEDIR:SHELL , the x after username is the encrypted password stored in /etc/shadow 
+--- UID,GID the User ID , Primary Group id which stored in /etc/group
+
+-adduser <username>
+create new user to the system
+-passwd <username>
+change the password of the user
+-su -  <username>
+switch  user , which allow to change user on the command line 
+-su - 
+will log u as root user
+-addgroup <groupname>
+this will create new group
+-useradd <username>
+create new user
+-groupadd <groupname>
+create new group
+-deluser <username>
+-userdel <username>
+delete user
+-groupdel <groupname>
+-delgroup <groupname>
+delete group
+
+
+--- adduser,addgroup,delgroup used in terminal ,useradd,gropadd,groupdel low level when excuting in autmated way
+
+-usermode [options]  <username>
+change the group of the user
+-usermode -g <groupname> <username>
+change the user primary group
+-usermode -G <group1>,<group2> <username>
+add the user to multiple groups which may alter its exiting group set
+-usermode -aG <group1>,<group2> <username>
+append new groups to current user groups
+-groups 
+will append the groups which the user belongs to
+-groups <username>
+display list of  the groups the user belogn to
+-useradd -G <group> <username>
+this will specify the group the user will join with the default grou
+-gpasswd -d <username> <groupname>
+remove user from group
+
+
+---------------------------------------------------------------------------------- Pipes -----------------------------------------------------------------------------------------------------------
+--- every output  of linux command can be input for another command
+
+-cat /var/log/syslog | less
+
+the less command taks the out put of the cat command and make the output readable using pages
+-ls la /usr/bin | less
+print the output in pages
+
+-grep
+globally search for reqular expression and print out , search for particular pattern of characters and display all lines that contain that pattern 
+-history | grep sudo
+grap all sudo command from history command 
+
+-history | grep ls | less
+display all uses for ls from history as pages
+
+-history | grep "sudo chomd"
+
+-ls /user/bin | grep java
+
+using grep for search for file or directory or content of the file
+
+-history | grep sudo > sudo-command.txt
+redirect the output into file using > sign
+-history | grep sudo >> sudo-command.txt
+>> is append to the file > replace the content of the file or create it
+
+-clear;sleep 1; echo "hello to devops";
+the ; is used to excute command one by one
+
+
