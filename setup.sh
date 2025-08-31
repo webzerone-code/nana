@@ -50,3 +50,12 @@ echo "Reading user input"
 read -p "Please Enter Your password : " user_pwd
 echo "the entered password is $user_pwd"
 
+#Reading all Paramters assigned to script
+
+echo "all the paramters is passed is $* and there number is $#"
+#./setup.sh  hello mydirectory h1 h2 h3 h4 h5
+
+#LOOPS#
+for param in $*; do
+    echo "$param"
+done    
