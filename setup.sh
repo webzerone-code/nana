@@ -91,4 +91,9 @@ score_sum
 function create_file() {
     file_name=$1
     touch $file_name
+    echo "file $file_name added"
 }
+
+create_file test.txt
+create_file myfile.yaml
+create_file myscript.sh
