@@ -218,5 +218,9 @@ redirect the output into file using > sign
 
 -clear;sleep 1; echo "hello to devops";
 the ; is used to excute command one by one
-
-
+------------------------------------------------------------ EnvironmentVariables ---------------------------------------------------------------------------
+-printenv
+return all the system environment variable
+-printenv | less
+-printenv <variable_name>
+-printenv | grep USER
