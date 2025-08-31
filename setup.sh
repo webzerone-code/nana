@@ -61,10 +61,34 @@ for param in $*; do
 done    
 
 
-counter=0
-while [ true ]; do
-    echo "sleep for 1 and counter is $counter";
-    #counter=$((counter+1))
-    ((counter++))
-    sleep 1
-done
+
+
+#counter=0
+#while [ true ]; do
+#    echo "sleep for 1 and counter is $counter";
+#    #counter=$((counter+1))
+#    ((counter++))
+#    sleep 1
+#done
+
+
+function score_sum {
+    sum=0
+    while true; do
+        read -p "enter a score: " score
+
+        if [ $score == "q" ]; then
+            break
+        fi
+
+        sum=$(($sum+$score))
+        echo "total score:" $sum
+    done    
+}
+
+score_sum
+
+function create_file() {
+    file_name=$1
+    touch $file_name
+}
