@@ -45,3 +45,8 @@ fi
 #./setup.sh  hello mydirectory
 
 #Reading user input
+
+echo "Reading user input"
+read -p "Please Enter Your password : " user_pwd
+echo "the entered password is $user_pwd"
+
