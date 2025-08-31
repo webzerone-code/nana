@@ -120,3 +120,5 @@ function calculate_sum {
 
 result=$(calculate_sum 3 5)
 echo "The calculated result is $result"
+# access environment variable
+echo "the value of the DB_PASS env value is $DB_PASS"

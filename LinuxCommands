@@ -224,3 +224,14 @@ return all the system environment variable
 -printenv | less
 -printenv <variable_name>
 -printenv | grep USER
+-export DB_USERNAME=dbuser
+creating enviroment variable it allows chage it values
+-unset DB_USERNAME
+remove the env variable
+--- .bashrc the env variables we set is active only in the current bash session if we need them present we have to store them in .bashrc file using same syntax as bash
+--- export var_name=value
+--- this will make them present all the time
+-source .bashrc
+update the current session of the terminal with added values
+--- /etc/environment this file contain the configuration for all users so if u need to add env variable in this file it will be active for all users which contain the 
+--- path variable 
