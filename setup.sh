@@ -90,10 +90,33 @@ score_sum
 
 function create_file() {
     file_name=$1
+    is_shell_script=$2
     touch $file_name
     echo "file $file_name added"
+    if [ $is_shell_script = true ]; then
+        chmod u+x $file_name
+        echo "Adding excuting permission";
+    fi   
+    #return "what ever the value am returing which i can assign to variable"     
 }
 
 create_file test.txt
 create_file myfile.yaml
-create_file myscript.sh
+create_file myscript.sh true
+
+function sum() {
+    total=$(($1+$2))
+    #return $total
+    echo "$total"
+}
+
+totalsum=$(sum 1 2)
+echo "this total sum is $totalsum"
+
+function calculate_sum {
+  local result=$(( $1 + $2 ))
+  return $result
+}
+
+result=$(calculate_sum 3 5)
+echo "The calculated result is $result"
