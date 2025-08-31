@@ -59,3 +59,12 @@ echo "all the paramters is passed is $* and there number is $#"
 for param in $*; do
     echo "$param"
 done    
+
+
+counter=0
+while [ true ]; do
+    echo "sleep for 1 and counter is $counter";
+    #counter=$((counter+1))
+    ((counter++))
+    sleep 1
+done
