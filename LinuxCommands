@@ -235,3 +235,15 @@ remove the env variable
 update the current session of the terminal with added values
 --- /etc/environment this file contain the configuration for all users so if u need to add env variable in this file it will be active for all users which contain the 
 --- path variable 
+---------------------------------------------------------- Networking --------------------------------------------------------------------------------------
+-ifconfig
+geting the machien ip , subnet mask and ipgateway
+-netstat
+display what active connections u have 
+-ps aux
+display what applications is running and in which port they are running 
+-nslookup 
+get the ip address of the domain 
+-ping 
+check if the serives is accessable or not
+------------------------------------------------------ SSH - Secure Shell ---------------------------------------------------------------------------------
