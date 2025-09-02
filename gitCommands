@@ -21,8 +21,10 @@ to view status u made in u working directory
 allows to merge the feature branch to the main branch or any other branch
 -git checkout "branch_name"
 to either to switch branch or create new branch
+-git checkout -b "branch_name"
+create branch and switch to it 
 -git branch
-return information about the branch
+return information about the git branches
 -git branch "branch_name"
 -git revert
 creates a new commit that undoes a previous commit
