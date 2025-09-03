@@ -26,6 +26,8 @@ create branch and switch to it
 -git branch
 return information about the git branches
 -git branch "branch_name"
+-git branch -d "branch_name"
+delete branch
 -git revert
 creates a new commit that undoes a previous commit
 -git rebase "→ Replay commits on top of another branch (great for clean history)."
@@ -59,3 +61,31 @@ to grab upstream branches
 -git merge upstream/master
 to marge changes into the master branch
 -git request-pull
+
+--- rebase when 2 different changes from 2 or more source is done on the same branch
+-git pull -r
+its pull the remote changes and stick local changes on top of it 
+--- resolve confilects when u change the same line/s
+git rebase --continue
+-git rm -r --cached .idea
+remove .idea from git 
+-git rm -r --cached node_module
+remove node_module from git
+-git stash
+it will hide the local changes without commiting them
+-git stash pop
+get the stash changes back
+-git checkout <commit_hash>
+commit hash which is return from git log to get back to certien commit in the project
+-git reset --hard HEAD~1
+rest (remove) the last 1 commit on the local git 1 or 2 ... etc
+-git reset --soft HEAD~1
+remove the last commit but the file changes is there so i can make the changes and add the files again and commit them --soft is the default for git rest
+-git commit --amend 
+merge the current commit with prev one
+--- rest when the changes is done 
+-git push --force 
+-git revert <commit hash>
+create a new commit to revert the old commits changes
+
+
