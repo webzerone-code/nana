@@ -1,0 +1,39 @@
+what is container 
+container is made of layers of images stacked on each other mostly linux bease image cos of their small size
+What is the Image and Container
+Image is the actual Package the artifact that can be moved around 
+Container is the actually the application contains environment 
+what is the differnce between docker and vm
+vm has os applications layer and os Kernel
+docker has os application layer and uses the host os kernel which make the size is smaller than vm and mush faster 
+Docker Architecture
+----> Docker Engine 
+------> Server (Pulling Images,Managing Images & containers)
+--------> Container Runtime (Pulling Images,Managing Container Lifecycle)
+--------> volumes (Persisting Data)
+--------> Network (Configuring Network for container communication)
+--------> Build Images (Build Own Docker Images)
+------> API (Interacting with docker server)
+------> CLI (Command line interface client to execute docker commands)
+
+-docker pull <image_name>
+docker pull redis
+-docker images 
+check all exiting images
+each image has name,tag (the version of the image), and id
+-docker run <image_name>
+start new container from specific image 
+-docker run -d <image_name OR ID> 
+running the container in detach mode and return the container id 
+-docker run <image_name:version>
+this will pull the image if not exit with spceific version and run
+-docker stop <container_id>
+stop docker container
+-docker ps 
+list of all running containers
+-docker ps -a
+list all the container running or not running 
+-----> Port Binding
+docker run -p <servies_port(pc port)>:<port_binding_to(image port)> <image_name>
+docker run -p 6000:6379 redis 
+this will bind redis post 6379 to 6000 port on the host pc
