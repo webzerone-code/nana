@@ -69,5 +69,15 @@ remove all unused networks
 remove network
 
 -----> example of running mongo db with port ,network env variable
--docker run mongo -p 27017:27017 -d --network mongo-network --name mongodb -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin 
+-docker run  -p 27017:27017 -d --network mongo-network --name mongodb -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin mongo
 here we are running docker image mongo and makeing container out of it on port 27017 with custom network and container name mongodb with env varaible usename and password admin
+-docker run  -p 8081:8081 -d --network mongo-network --name mongo-express -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=admin -e ME_CONFIG_MONGODB_SERVER=mongodb mongo-express
+
+-----> Docker Compose
+-docker-compose -f <file_name> up
+start docker compose container -f for file name
+-docker-compose down
+this will remove the containers and networks
+-docker-compose stop
+this will stop the running docker compose container
+------> Volumes Data Persistence with containers
