@@ -48,6 +48,8 @@ docker exec -it <container_id OR container_name> bash
 get inside specific container 
 the differnce between docker run and docker start is the docker run is creating container from the image but start is starting the container with configuration added in 
 start for example when u bind port in run u dont need to binded again with start cos it happend alleady 
+-docker logs <container_name or ID> -f
+stream the log
 
 -----> Docker networkd
 docker network is isolated network we connect to it from outside using localhost
