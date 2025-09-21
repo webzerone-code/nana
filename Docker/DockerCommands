@@ -29,6 +29,8 @@ running the container in detach mode and return the container id
 this will pull the image if not exit with spceific version and run
 -docker stop <container_id>
 stop docker container
+-docker start <container_name>
+start docker container
 -docker ps 
 list of all running containers
 -docker ps -a
@@ -37,3 +39,12 @@ list all the container running or not running
 docker run -p <servies_port(pc port)>:<port_binding_to(image port)> <image_name>
 docker run -p 6000:6379 redis 
 this will bind redis post 6379 to 6000 port on the host pc
+-----> Debug
+docker logs <container_id>
+docker logs <container_name>
+docker run --name <name_of_container> <image_name>
+create a new container with specific name from an image
+docker exec -it <container_id OR container_name> bash
+get inside specific container 
+the differnce between docker run and docker start is the docker run is creating container from the image but start is starting the container with configuration added in 
+start for example when u bind port in run u dont need to binded again with start cos it happend alleady 
