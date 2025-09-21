@@ -48,3 +48,24 @@ docker exec -it <container_id OR container_name> bash
 get inside specific container 
 the differnce between docker run and docker start is the docker run is creating container from the image but start is starting the container with configuration added in 
 start for example when u bind port in run u dont need to binded again with start cos it happend alleady 
+
+-----> Docker networkd
+docker network is isolated network we connect to it from outside using localhost
+to make container avalible for eachother or connect to each other we use or create shared network between them which require only container name to connect to each other
+-docker network inspect <network_name>
+-docker network ls 
+list all avalible docker networks
+-docker network create <network_name>
+create docker network
+-docker network connect <network_name> <container_name>
+connect network to container
+-docker network disconnect <network_name> <container_name>
+disconnect network from container
+-docker network prune 
+remove all unused networks
+-docker network rm <network_name>
+remove network
+
+-----> example of running mongo db with port ,network env variable
+-docker run mongo -p 27017:27017 -d --network mongo-network --name mongodb -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin 
+here we are running docker image mongo and makeing container out of it on port 27017 with custom network and container name mongodb with env varaible usename and password admin
