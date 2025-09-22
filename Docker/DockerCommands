@@ -81,3 +81,21 @@ this will remove the containers and networks
 -docker-compose stop
 this will stop the running docker compose container
 ------> Volumes Data Persistence with containers
+------> DockerFile
+is blue print for building images,
+Text file containing set of instructions used to build Docker Image
+each Docker File contains From Image
+-From <image>
+-ENV <environment variables>
+-RUN mkdir -p /home/app
+-COPY . /home/app
+copy from <src(host)> <dest(container)>
+-CMD ["node","server.js"]
+run the command
+
+-----> Building Image
+-docker build -t <image_name:tag_name> .
+the required parameters is is image name and location of docker file
+
+-docker rmi <image_name or image_id>
+delete docker image
