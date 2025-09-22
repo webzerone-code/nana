@@ -81,6 +81,21 @@ this will remove the containers and networks
 -docker-compose stop
 this will stop the running docker compose container
 ------> Volumes Data Persistence with containers
+so adding volume to docker is buy using -v when running the image and specify the name of the volume
+-docker run -v name:/var/lib/mysql/data
+in docker compose we add it under volume
+
+-docker volume ls
+list all the volumes
+-docker volume inspect <container_name or container_id>
+return information about volume or more one volume
+-docker volume create
+create docker volume
+-docker volume prune
+remove unused docker volumes
+-docker volume rm <container_name or container_id>
+remove volume
+
 ------> DockerFile
 is blue print for building images,
 Text file containing set of instructions used to build Docker Image
@@ -99,3 +114,8 @@ the required parameters is is image name and location of docker file
 
 -docker rmi <image_name or image_id>
 delete docker image
+
+-docker push <image_name:tag>
+push image to docker hup
+-docker tag <image_name:tag> <new_image_name:tag>
+add tag to a local image (rename image) made a copy of image with new name uses for AWS

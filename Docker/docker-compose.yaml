@@ -1,5 +1,14 @@
 version: '3'
 services:
+  my-app:
+    image: my-app:1.0 # either from docker hup or private repo url
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/home/app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
   mongodb:
     image: mongo
     ports:
@@ -7,6 +16,8 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=admin
+    volumes:
+      - mongo-data:/data/db
   mongo-express:
     image: mongo-express
     ports:
@@ -16,3 +27,6 @@ services:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=admin
       - ME_CONFIG_MONGODB_SERVER=mongodb
+volumes:
+  mongo-data:
+    driver: local
